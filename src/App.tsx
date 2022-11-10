@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const fetchPokemonData = async () => {
       // すべてのポケモンデータを取得
-      let response = await getAllPokemon(initialUrl)
+      const response = await getAllPokemon(initialUrl)
 
       //各ポケモンの詳細データを取得
       loadPokemon(response.results)
@@ -22,9 +22,9 @@ function App() {
   }, [])
 
   const loadPokemon = async (data: Result[]) => {
-    let _pokemonData = await Promise.all(
+    const _pokemonData = await Promise.all(
       data.map((pokemon: Result) => {
-        let pokemonRecord = getPokemon(pokemon.url)
+        const pokemonRecord = getPokemon(pokemon.url)
         return pokemonRecord
       }),
     )
