@@ -1,5 +1,6 @@
 import React from 'react'
 import { PokemonDetail } from '../../types/PokemonDetail'
+import "./Card.css";
 
 const Card = ({ pokemonDetail }: { pokemonDetail: PokemonDetail }) => {
     return (
@@ -10,7 +11,7 @@ const Card = ({ pokemonDetail }: { pokemonDetail: PokemonDetail }) => {
             <h3 className='cardName'>{pokemonDetail.name}</h3>
             <div className='cardTypes'>
                 <div>タイプ</div>
-                {pokemonDetail.types.map((type) => {
+                {pokemonDetail.types.map((type, i) => {
                     return (
                         <div>
                             <span className='typeName'>{type.type.name}</span>
